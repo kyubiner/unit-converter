@@ -17,22 +17,22 @@ faqs.forEach((faq) => {
 });
 
 const statusMsg = document.getElementById("status-msg");
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxB5r2jiWG9Yt3hmhjQmEyWKcQxs9-mo1gLtCD-vtqeQe8J9whfqbBheZF_IFQ04TWR/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzC1ALxwxtLDOhNxdzt-IFg0Bz_we-g9Qf6ETi6_jMH_tvKVVE52OGDkI5cnZkPH8ui/exec'
 const form = document.forms['Contact-form'];
 const buttonSubmit = document.getElementById("button-submit");
 
 function validateUserName(username) {
-    const userNameRegex = /^[a-zA-z0-9]{3,}$/;
+    const userNameRegex = /^[a-zA-Z0-9]{3,}$/;
     return userNameRegex.test(username);
 } 
 function validateEmail(email) {
-    const emailRegex = /^[\w.-]+@[a-zA-z\d.-]+\.[a-zA-Z]{2,}$/;
+    const emailRegex = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
 } 
 
 function validateForm() {
-    let username = document.getElementById("nama").value;
-    let email = document.getElementById("email").value;
+    let username = document.getElementById("nama").value.trim();
+    let email = document.getElementById("email").value.trim();
     if(!validateUserName(username)){
         statusMsg.style.display = "block";
         statusMsg.textContent = "username tidak valid";
@@ -55,13 +55,14 @@ function validateForm() {
 }
 
 form.addEventListener('submit', e => {
-e.preventDefault();
+    e.preventDefault();
+    if (!validateForm()) return;
+
 statusMsg.style.display = "block";
 statusMsg.textContent = "Sedang dikirim...";
 statusMsg.style.color = "#00ccff";
 buttonSubmit.disabled = true;
 
-if (!validateForm()) return;
 
 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {
