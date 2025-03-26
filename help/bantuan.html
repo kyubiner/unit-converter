@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bantuan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+</head>
+
+<body>
+    <h2>FAQ</h2>
+    <section class="main-faq">
+        <section class="Faq">
+            <section class="question">
+                <h4>1. Atas tujuan apa website ini dibuat?</h4>
+                <i class="ph ph-arrow-fat-line-down"></i>
+            </section>
+            <section class="answer">
+                <p>Project kecil yang bermaksud sebagai latihan saya dalam pengaplikasian materi DOM dan JavaScript lainnya.</p>
+            </section>
+        </section>
+        <section class="Faq">
+            <section class="question">
+                <h4>2. Dengan bahasa pemrograman apa website ini dibuat?</h4>
+                <i class="ph ph-arrow-fat-line-down"></i>
+            </section>
+            <section class="answer">
+                <p>Website ini dibuat menggunakan HTML, CSS, dan JavaScript vanilla.</p>
+            </section>
+        </section>
+        <section class="Faq">
+            <section class="question">
+                <h4>3. Bagaimana cara mengkonversi unit?</h4>
+                <i class="ph ph-arrow-fat-line-down"></i>
+            </section>
+            <section class="answer">
+                <p>Masukkan angka, pilih satuan asal dan satuan tujuan, lalu klik tombol "Convert".</p>
+            </section>
+        </section>
+        <section class="Faq">
+            <section class="question">
+                <h4>4. Mengapa ada beberapa konversi yang unitnya sedikit?</h4>
+                <i class="ph ph-arrow-fat-line-down"></i>
+            </section>
+            <section class="answer">
+                <p>karena sulit untuk mengimplementasikan unit lainya, namun bisa saja diupdate berkala nantinya.</p>
+            </section>
+        </section>
+        <section class="Faq">
+            <section class="question">
+                <h4>5. Apakah ada konversi unit baru kedepannya?</h4>
+                <i class="ph ph-arrow-fat-line-down"></i>
+            </section>
+            <section class="answer">
+                <p>Ya, jika website ini ramai dikunjungi, ataupun saya yang sedang gabut.</p>
+            </section>
+        </section>
+    </section>
+    <main class="form-border">
+        <form id="myform" name="Contact-form" autocomplete="on">
+            <h2 style="text-align: center">Contact Form</h2>
+            <p id="status-msg"></p>
+            <section class="form">
+                <label for="nama">Nama :</label>
+                <input id="nama" class="input" type="text" placeholder="Nama anda..." name="nama" required />
+                <br />
+                <label for="email">Email :</label>
+                <input id="email" class="input" type="email" placeholder="Email anda..." name="email" required />
+                <br />
+                <label for="pesan" style="vertical-align: top">Pesan :</label>
+                <textarea id="pesan" class="input" name="pesan" placeholder="Pesan anda..." rows="8" cols="27"
+                    style="resize: none" required></textarea>
+                <button id="button-submit" type="submit">Kirim</button>
+            </section>
+        </form>
+    </main>
+    <script src="/help/script.js"></script>
+</body>
+
+</html>

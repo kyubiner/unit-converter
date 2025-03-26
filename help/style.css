@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #00ccff;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px;
+    color: #00ccff;
+    text-shadow: 3px 3px 0 #003366;
+}
+
+input,
+select,
+textarea,
+button{
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    margin: 5px;
+    border: 4px solid #00ccff;
+    background-color: #111;
+    color: #00ccff;
+    text-shadow: 2px 2px 0 #003366;
+    box-shadow: 2px 2px 0 #003366;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    background-color: #004488;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0055aa;
+    transform: scale(1.05);
+}
+
+/* Container */
+.assistant {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0.5px;
+    right: 20px;
+}
+
+/* Balon Chat */
+.chat-bubble {
+    background: #222;
+    color: #00ccff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 8px 12px;
+    border: 3px solid #00ccff;
+    box-shadow: 3px 3px 0 #003366;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 5.5rem;
+    /* Trik agar bisa diberi transisi */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    /* Supaya tidak mengganggu layout saat hidden */
+    visibility: hidden;
+}
+
+/* Efek muncul */
+.chat-bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Buntut Pixelated */
+.chat-bubble::before {
+    content: "";
+    position: absolute;
+    right: -3.6px;
+    top: 80%;
+    width: 10px;
+    height: 6px;
+    background: #222;
+    border-top: 2px solid #00ccff;
+    border-right: 2px solid #00ccff;
+    box-shadow: 2px -2px 0 #003366;
+    transform: rotate(89deg) scale(1.5) skew(147deg);
+    -webkit-transform: rotate(90deg) scale(1.5) skew(147deg);
+    -moz-transform: rotate(89deg) scale(1.5) skew(147deg);
+    -ms-transform: rotate(89deg) scale(1.5) skew(147deg);
+    -o-transform: rotate(89deg) scale(1.5) skew(147deg);
+}
+
+/* Gambar Maskot */
+.assistant-img {
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+}
+
+.assistant-img:hover {
+    width: 50px;
+    height: 50px;
+}
+
+output {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+main {
+    background: #222;
+    display: inline-block;
+    border: 4px solid #00ccff;
+    box-shadow: 4px 4px 0 #003366;
+}
+
+.main-convert {
+    padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    select {
+        padding: 2px;
+    }
+}
+
+span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.form-border {
+    margin: 6rem 2%;
+}
+
+.input {
+    width: 75%;
+    text-shadow: none !important;
+}
+
+label:first-child {
+    word-spacing: 17px;
+}
+
+h2 {
+    text-shadow: 3px 3px 0 #003366;
+}
+
+.Faq {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Tambahkan sedikit jarak antar FAQ */
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.answer {
+    font-size: 12px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0 10px; /* Padding awal 0 agar transisi lebih mulus */
+}
+
+.answer.show {
+    max-height: 300px; /* Sesuaikan jika jawabannya lebih panjang */
+    opacity: 1;
+    padding: 10px; /* Tambahkan padding saat terbuka */
+}
+
+.ph-arrow-fat-line-down {
+    cursor: pointer;
+    font-size: 23px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ph-arrow-fat-line-down.rotate {
+    transform: rotate(180deg);
+}
+
+.main-faq {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
