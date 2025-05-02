@@ -55,9 +55,9 @@ class unitConverter {
                 miligram: 0.001,
             },
             time: {
-                hour: 3600,
-                minute: 60,
-                second: 1,
+                hour: 3600.0,
+                minute: 60.0,
+                second: 1.0,
             },
             temperature: {},
         }
